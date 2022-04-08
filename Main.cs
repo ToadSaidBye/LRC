@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net;
+
 namespace LRC
 {
     class Program
     {
     static void Main(string[] args)
     {
+        Console.ForegroundColor
+            = ConsoleColor.Green;
         updater.update();
         Console.WriteLine("Welcome to Left Right Center!");
         Console.WriteLine("______            _________             ________");
@@ -27,14 +31,33 @@ namespace LRC
         Console.WriteLine("                   https://github.com/ToadSaidBye");
         Console.WriteLine(Environment.NewLine);
         Console.WriteLine("Version:");
-        Console.WriteLine(" __    __ ");
-        Console.WriteLine("|  |     |");
-        Console.WriteLine("|  |   --| ");
-        Console.WriteLine("|  |     |");
-        Console.WriteLine("|__| o --   ");
+        Console.WriteLine(" __   ");
+        Console.WriteLine("|  |  | |");
+        Console.WriteLine("|  |  |_|");
+        Console.WriteLine("|  |    |");
+        Console.WriteLine("|__| o  | ");
         
         
-        if (variables.shouldbeversion == variables.version){Console.WriteLine("Up to date");} else {Console.WriteLine("Looks like you need an update! Download at https://github.com/ToadSaidBye/LRC");}
+        if (variables.shouldbeversion == variables.version){Console.WriteLine("Up to date");} else {Console.WriteLine("Looks like you need an update! Download at https://github.com/ToadSaidBye/LRC");
+        if (File.Exists("LRC v" + variables.version + ".exe")){File.Delete("LRC v" + variables.version + ".exe");}
+        using (WebClient wc = new WebClient())
+            {
+                wc.Headers.Add("a", "a");
+                try
+                {
+                    wc.DownloadFile("https://raw.githubusercontent.com/ToadSaidBye/LRC/compiled/compiled.exe", @"LRC v" + variables.version + ".exe");
+                    Console.WriteLine("Sucsessfully downloaded at LRC v" + variables.version + ".exe");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+
+            }
+       
+        
+        
+        }
 
         Console.WriteLine("Layout:");
         Console.WriteLine(Environment.NewLine);
