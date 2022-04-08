@@ -12,24 +12,28 @@ namespace LRC
     {
         updater.update();
         Console.WriteLine("Welcome to Left Right Center!");
-        Console.WriteLine("___________            _________             _______");
-        Console.WriteLine("|         |            |        \\           /      /");
-        Console.WriteLine("|         |            |         \\         /      /");
-        Console.WriteLine("|         |            |          \\        |     |");
-        Console.WriteLine("|         |            |          /        |     |");
-        Console.WriteLine("|         |            |         /         |     |");
-        Console.WriteLine("|         |            |_________|         |     |");
-        Console.WriteLine("|         |__________  |     |\\   \\        |     |");
-        Console.WriteLine("|                   |  |     | \\   \\       |     |");
-        Console.WriteLine("|                   |  |     |  \\   \\      |     |");
-        Console.WriteLine("|                   |  |     |   \\   \\     \\     \\");
-        Console.WriteLine("|___________________|  |_____|    \\___\\     \\_____\\");
+        Console.WriteLine("______            _________             ________");
+        Console.WriteLine("|    |            |   ___  \\           /      __|");
+        Console.WriteLine("|    |            |   |  |  \\         /      /");
+        Console.WriteLine("|    |            |   |  |   \\        |     |");
+        Console.WriteLine("|    |            |   |__|   /        |     |");
+        Console.WriteLine("|    |            |         /         |     |");
+        Console.WriteLine("|    |            |_________|         |     |");
+        Console.WriteLine("|    |            |     |\\   \\        |     |");
+        Console.WriteLine("|    |            |     | \\   \\       |     |");
+        Console.WriteLine("|    |_________   |     |  \\   \\      |     |");
+        Console.WriteLine("|              |  |     |   \\   \\     \\     \\___");
+        Console.WriteLine("|______________|  |_____|    \\___\\     \\________|");
+        Console.WriteLine("                   https://github.com/ToadSaidBye");
         Console.WriteLine(Environment.NewLine);
         Console.WriteLine("Version:");
-        Console.WriteLine("___   __ ");
-        Console.WriteLine("| |     |");
-        Console.WriteLine("| |    / ");
-        Console.WriteLine("|_| o  ~~  ");
+        Console.WriteLine(" __    __ ");
+        Console.WriteLine("|  |     |");
+        Console.WriteLine("|  |   --| ");
+        Console.WriteLine("|  |     |");
+        Console.WriteLine("|__| o --   ");
+        
+        
         if (variables.shouldbeversion == variables.version){Console.WriteLine("Up to date");} else {Console.WriteLine("Looks like you need an update! Download at https://github.com/ToadSaidBye/LRC");}
 
         Console.WriteLine("Layout:");
@@ -40,6 +44,8 @@ namespace LRC
         Console.WriteLine(Environment.NewLine);
         Console.WriteLine("              You/Player              ");
         Console.WriteLine(Environment.NewLine);
+        Console.WriteLine(Environment.NewLine);
+
         Console.WriteLine("You start with 5 tokens");
         Console.WriteLine("Press ENTER to start");
         Console.ReadLine();
@@ -62,7 +68,7 @@ namespace LRC
         if (turn == 2){if (com2 > 2){temp3 = 3;} else {temp3 = com2;}}
         if (turn == 3){if (com3 > 2){temp3 = 3;} else {temp3 = com3;}}
         while (temp3 > 0){
-            Console.WriteLine("Rolls left: " + temp3);
+            Console.WriteLine("Rolls left: " + temp3 + "                       Player " + turn + "'s turn");
     Random diceRandomizer = new Random();
     int dice = diceRandomizer.Next(0, 5);
     if (dice == 0){
